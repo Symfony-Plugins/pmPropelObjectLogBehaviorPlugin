@@ -73,7 +73,7 @@ class pmPropelObjectLogBehavior
     $peer_class = get_class($object).'Peer';
 
     $criteria->add(pmObjectLogPeer::OBJECT_CLASS, get_class($object));
-    $criteria->add(pmObjectLogPeer::OBJECT_KEY, $object->getPk());
+    $criteria->add(pmObjectLogPeer::OBJECT_KEY, $object->getPrimaryKey());
 
     return pmObjectLogPeer::doSelect($criteria);
   }
