@@ -1,0 +1,26 @@
+propel:
+  _attributes: {package: plugins.pmPropelObjectLogBehaviorPlugin.lib.model}
+
+  pm_object_log:
+    _attributes: {phpName: pmObjectLog}
+    id:
+    user_id:
+      type: integer
+      foreignTable: sf_guard_user
+      foreignReference: id
+      required: true
+      onDelete: restrict
+    object_class:
+      type: varchar(256)
+      required: true
+    object_key:
+      type: integer
+      required: true
+    column_name:
+      type: varchar(256)
+      required: true
+    previous_value:
+      type: longvarchar
+    actual_value:
+      type: longvarchar
+    created_at:
